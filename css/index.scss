@@ -1,0 +1,750 @@
+
+
+// variables
+$colorPrimary:#9356DC;
+$colorSecondary :#FF79DA ;
+$colorTertiary:#99E2D0;
+$colorBackGround:#f2f2f2;
+$colorDegrade:linear-gradient($colorSecondary,$colorPrimary);
+$paddingAccueil: 7px 130px 7px 130px;
+$paddingButton:25px 25px 25px 25px;
+$fontSize:(text:20px,subtitle:25px,title:30px,id:23px,info:17px,button:18px,);
+$marginBottomSection: 50px;
+
+// Style générale
+body{
+    text-decoration: none;
+    margin:0px;
+    width:100%;
+
+    a{
+        text-decoration: none;
+        font-family: "Roboto",sans-serif;
+    }
+    a:visited{
+        text-decoration: none;
+        color:black
+    }
+    p,h2,li{
+        font-family: "Roboto",sans-serif;
+    }
+    h1{
+        font-family: "Shrikhand","Roboto",sans-serif;
+    }
+
+}
+
+
+
+// LOADER
+
+
+body {
+    font-family: "Shrikhand", sans-serif;
+    height: 100vh;
+}
+
+
+/* loader */
+
+.loader {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display:flex; 
+    justify-content: center;
+    align-items: center;
+    opacity:0;
+    animation: loader 3s  ;
+}
+.lettre {
+    color: #484848;
+    font-size: 40px;
+    letter-spacing: 15px;
+    margin-bottom: 150px;
+    animation: flash 1.2s linear infinite;
+}
+
+
+.lettre:nth-child(1){
+    animation-delay: 0.1s;
+}
+.lettre:nth-child(2){
+    animation-delay: 0.2s;
+}
+.lettre:nth-child(3){
+    animation-delay: 0.3s;
+}
+.lettre:nth-child(4){
+    animation-delay: 0.4s;
+}
+.lettre:nth-child(5){
+    animation-delay: 0.5s;
+}
+.lettre:nth-child(6){
+    animation-delay: 0.6s;
+}
+.lettre:nth-child(7){
+    animation-delay: 0.7s;
+}
+.lettre:nth-child(8){
+    animation-delay: 0.8s;
+}
+.lettre:nth-child(9){
+    animation-delay: 0.9s;
+}
+.lettre:nth-child(10){
+    animation-delay: 1s;
+}
+
+.fondu-out {
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+}
+
+
+
+
+
+
+//keyframes
+
+@keyframes apparition-accueil{
+     0%{
+        opacity:0;
+     }
+     100%{
+         display:block;
+     }
+}
+@keyframes flash {
+    0% {
+        color: $colorPrimary;
+        text-shadow: 0 0 7px $colorPrimary;
+    }
+    90% {
+        color: #484848;
+        text-shadow: none;
+    }
+    100% {
+        color: $colorPrimary;
+        text-shadow: 0 0 7px $colorPrimary;
+    }
+}
+
+@keyframes loader{
+    0% {
+        z-index:1 ;
+        display:flex;
+        opacity:1;
+    }
+    90%{
+        opacity:1;
+        z-index:1 ;
+        
+    }
+    100%{
+        z-index:1 ;  
+     opacity: 1;
+    }
+}
+
+@keyframes apparition {
+    0% {
+        opacity: 0;
+        transform: translateY(1200px)    ;
+        -webkit-transform: translateY(1200px);
+        -moz-transform: translateY(1200px);
+        -ms-transform: translateY(1200px);
+        -o-transform: translateY(1200px);
+} 
+    
+    100% {
+        opacity:0.6;
+        transform: translateY(0px)
+    }
+ }
+ @keyframes apparition-picture {
+     0% {
+         opacity: 0;
+         transform: translateY(50px)
+     } 
+     
+     100% {
+         opacity:0.8;
+         transform: translateY(0px);
+         
+     }
+  }
+ 
+  @keyframes apparition-card{
+      0%{
+          opacity:0;
+          transform:translateY(-50px);
+      }
+      100%{
+          opacity:1;
+          transform:translateY(0px);
+      }
+  }
+ 
+ @keyframes apparition-validate{
+    
+     0%{  
+        width:5px;
+     }
+     17%{
+         width:20px;
+     }
+     33%{
+         width:40px;
+     
+     }
+ 
+     66%{
+         width:60px;
+     }
+     100%{
+         width:75px;
+         
+     }
+ 
+ }
+
+ @keyframes apparition-check{
+    
+    to{
+        transform:rotate(-360deg);
+        
+    }
+
+}
+
+ 
+
+
+
+
+// -----------------------Header accueil................//
+
+.logo{
+    margin-top:0px;
+    margin-bottom: 10px;
+    padding:30px 0px 20px 0px;
+    box-shadow:1px 0px 8px grey;
+    display: flex;
+    justify-content: center;
+    &__img{
+        height:40px;
+    }
+}
+.accueil{
+display:flex;
+flex-direction: column;
+justify-content: center;
+align-items :center;
+flex: 1;
+background-color: $colorBackGround;
+padding-bottom:60px;
+margin-bottom:$marginBottomSection;
+&__title{
+    font-size: map-get($map: $fontSize, $key:title );
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom:10px;
+    font-family: "Roboto",sans-serif;
+    text-align: center;
+}
+&__text{
+    font-size: map-get($map: $fontSize, $key:text );
+    margin-left: 40px;
+    margin-right: 40px;
+    color:grey;
+    text-align: center;
+    margin-top:0px;
+}
+}
+
+.location{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items: center;
+    background-color:white;
+    padding:20px 0px 30px 110px;
+    &__icone{
+        height:20px;
+    }
+    &__search{
+        width: 400px;
+        padding-left:20px;
+        padding-top:6px;
+        font-size:20px;
+        font-weight:bold ;
+        border:none;
+        background-color:white;
+        
+        &::placeholder{
+            color:black;
+            padding-left: 20px;
+        }
+    }
+
+    
+  
+}
+
+.button-purple{
+    font-size: map-get($map: $fontSize, $key:button );
+    color:white;
+    border:none;
+    border-radius:33px;
+    background:linear-gradient($colorSecondary,$colorPrimary);
+    padding:$paddingButton;
+    text-decoration: none;
+    box-shadow: 1px 1px 10px grey;
+    margin-top:20px;
+    margin-left:auto;
+    margin-right: auto;
+    &--command{
+        display:block;
+      margin-left:auto;
+      margin-right:auto;
+      width:auto;
+      margin-top: 50px;
+      margin-bottom: 70px;;
+    }
+    &:visited{
+        color:white;
+    }
+    &:hover{
+        opacity: 0.8;
+        transition: opacity 0.3s ease-in-out;
+        box-shadow:2px 2px 15px grey;
+        transition: box-shadow 0.3s ease-in-out;
+
+    }
+}
+
+// -----------------------------------------------------main----------------------------------
+.fonction--titre{
+   margin-left: 15px;
+   font-size: map-get($map: $fontSize, $key:title );
+}
+.fonction{
+    padding:0px;
+    
+    &__card{
+        display:flex;
+        justify-content:stretch;
+        list-style-type: none;
+        background-color: $colorBackGround;
+        padding:20px 30px 20px 30px;
+        margin-bottom:20px;
+        border-radius: 35px;
+        border-bottom :1px solid lightgrey;
+        
+        &:hover{
+         background-color: lighten($color: $colorPrimary, $amount: 35%);
+         color:lighten($color: $colorPrimary, $amount: 10%);
+     }
+        &:hover > &--icone{
+            color:pink;
+        }
+     &--numero {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         width: 25px;
+         height: 25px;
+         border-radius: 50%;
+         background-color: #9256dc;
+         color: #fff;
+         font-size: 17px;
+         font-weight: bold;
+         margin-right: 30px;
+       }
+       &--icone{
+           color:grey;
+           font-size: 25px;
+            margin-right:25px;
+           
+          
+       }
+       &--text{
+           font-size:map-get($map: $fontSize, $key:text );
+           font-weight: bold;
+           
+           
+       }
+    }
+    
+    
+         
+        
+           
+   
+ }
+ 
+ .padding-left{
+     padding-left: 50px;
+ }
+ .restaurant{
+     background-color: $colorBackGround;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     padding-bottom: 60px;
+     &__title{
+         font-size: map-get($map: $fontSize, $key:title);
+         margin-left:20px;
+     }
+     &__title:nth-child(1){
+         align-self:baseline;
+         padding-left:15px;
+     }
+ }
+ 
+ 
+ 
+ 
+ .card{
+     background-color: white;
+     border-radius:33px;
+     margin :15px;
+     text-decoration: none;
+     box-shadow: 0px 2px 0px lightgray;
+     position:relative;
+     animation: accueil-apparition 4s ;
+     &__new{
+         position:absolute;
+         top:10px;
+         right:20px;
+         color:green;
+         background-color:rgb(164, 243, 164);
+         padding:6px;
+         font-weight: 600;
+     }
+    
+     &__img{
+         height :175px;
+         width: 350px;
+         border-top-left-radius: 33px;
+         border-top-right-radius: 33px;
+     }
+     &__info{
+         display:flex;
+         flex-direction: row;
+         justify-content: space-between;
+         align-items: center;
+         padding: 5px;
+         color:black;
+         
+         &--text{
+            margin:5px 0px 5px 5px;
+         }
+         &--nom{
+            margin :5px 0px 5px 5px;
+         }
+         
+     }
+     &__heart{
+         height:20px;
+         padding-right: 15px;
+         &:hover > &--empty{
+             opacity:0;
+             transition:opacity 0.7s ease-in-out ;
+         }
+        
+           &--full{
+               position:relative;
+               color:$colorPrimary;
+               height: 18px;
+               opacity:0;
+               background-clip:border-box;
+
+               &:hover{
+                   opacity:1;
+                   transition: opacity 1.5s ease-in-out; 
+                   
+               }
+              
+           }
+           &--empty{
+               position:absolute;
+               height:18px;
+           }
+       
+     }
+     
+     &:visited{
+         color:black; 
+ }
+ &:hover{
+     transform:scale(1.1);
+     transition: transform 0.3s ease-in ;
+     
+ }
+     
+ }  
+ 
+
+ //--------------------------------Header Restaurant----------------------------------
+
+.head{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    &__logo{
+        height:30px;
+        padding-left:20px;    
+    }
+    &__icone{
+        height:30px;
+    }
+}
+.backgroundimg-alafrancaise{
+    background-image: url("../images/restaurants/aLaFrancaise.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+    height:300px;
+    position:absolute;
+    animation:apparition-picture 1s ease-in-out;  
+    z-index: 0;
+}
+.backgroundimg-lapalettedugout{
+    background-image: url("../images/restaurants/laPaletteDuGout.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+    height:300px;
+    position:absolute;
+    animation:apparition-picture 1s ease-in-out;  
+    z-index: 0;
+}
+.backgroundimg-ledelicedessens{
+    background-image: url("../images/restaurants/leDéliceDesSens.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+    height:300px;
+    position:absolute;
+    animation:apparition-picture 1s ease-in-out;  
+    z-index: 0;
+}
+.backgroundimg-lanoteenchantee{
+    background-image: url("../images/restaurants/laNoteEnchantée.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+    height:300px;
+    position:absolute;
+    animation:apparition-picture 1s ease-in-out;  
+    z-index: 0;
+}
+
+// -------------------------------------------------------Main Restaurant-------------------------
+
+.Menu{
+    background-color: $colorBackGround;
+    border-top-left-radius: 90px;
+    border-top-right-radius: 90px;
+    width:100%;
+    padding: 50px 20px 50px 5px;
+    animation: apparition 1.0s ease-in-out ;
+    position:relative;
+    top:220px;
+    z-index:1;
+    &__h2{
+        padding-top:30px;
+        margin: 10px;
+        color:grey;
+        font-size:20px;
+    }
+}
+
+.id-restaurant{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__name{
+        font-size: map-get($map: $fontSize, $key:title );
+        padding-left: 25px;
+    }
+   
+}
+.heart-restaurant{
+    height:22px;
+}
+
+
+.selection{
+    background-color: white;
+    border-radius: 10px;
+    border-bottom: 1px solid lightgrey;
+    display:flex;
+    justify-content: space-between;
+    align-items:flex-end ;
+    margin-bottom: 25px;
+    animation: apparition-card 1s ease-in-out 0.5s ;
+    position: relative;
+    max-width:400px;
+    &:hover > &__validate{
+        display:block;
+        animation: apparition-validate 0.2s ease-in both;
+    }
+    &:hover > &__check{
+      display:block;
+      animation: apparition-check 0.3s ease-in  ;
+
+    }
+ 
+  
+    
+  
+     &:visited {
+        color:black;
+        text-decoration: none;
+    }  
+   
+    &__text{
+        overflow:hidden;
+        text-overflow:ellipsis; 
+        white-space: nowrap;
+        float:left;
+    }
+
+    &__id{
+        font-weight:bold;
+        font-size: map-get($map: $fontSize, $key:id );
+        padding: 5px 0px 5px 10px;
+        margin:0px;
+        color:black;
+        text-overflow:ellipsis; 
+        white-space: nowrap;
+        overflow:hidden;
+       
+        
+    }
+    &__info{
+        color: grey;
+        font-size: map-get($map: $fontSize, $key:info );
+        padding:5px 0px 5px 10px;
+        margin:0px;
+        text-overflow:ellipsis; 
+        white-space: nowrap;
+        overflow:hidden;
+       
+       
+    }
+    &__price{
+        font-size:20px;
+        font-weight: bold;
+        padding-left:15px ;
+        padding-right: 20px;
+        color:black;
+        display:inline-block;
+    
+}
+    &__validate{
+         background-color: $colorTertiary;
+         height:68px;
+         position:absolute;
+         right:0px;
+         border-bottom-right-radius: 10px;
+         border-top-right-radius: 10px;
+         z-index: 0;
+         margin-left:50px;
+    }
+    &__check{
+        right:20px;
+        bottom:16px;
+        color:white;
+        font-size: 30px;
+        z-index: 1;
+        position:relative;
+        display:none;
+        margin-left:50px;
+    }
+}
+
+.selection-apparition-plats{
+    animation:apparition-card 2s ease-in-out 0.5s ;
+}
+.selection-appparition-desserts{
+    animation:apparition-card 3s ease-in-out 0.5s ;
+}
+
+.green-line{
+    height:5px;
+    width:80px;
+    background-color: $colorTertiary;
+    margin:5px 0px 50px 10px;
+}
+
+
+
+ // ------------------------------------Footer---------------------------------
+ .footer--restaurant{
+    position:relative;
+    top:200px;
+    z-index: 1;
+ }
+.footer{
+    background-color: lighten($color: black, $amount: 15%);
+    &__logo{
+        padding: 15px;
+        height:25px;
+
+    }
+    &__lien{
+        display:flex;   
+        align-items: center;
+        color:white;
+        font-size:20PX ;
+        margin:10px;
+        margin-left:30px;
+        &:visited{
+            color:white;
+        }
+    }
+    &__icone{
+        padding-right: 20px;
+        color:white;
+    }
+}
+
+@media screen and (min-width:768px){
+.fonction{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.restaurant{
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-around;
+    width:100%;
+    flex-wrap: wrap;
+}
+.restaurant__title{
+    padding-left:20px;
+}
+.card{
+    margin:45px;
+}
+.section{
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.footer{
+    display:flex;
+    padding:50px 20px 50px 20px;
+}
+}
+    
